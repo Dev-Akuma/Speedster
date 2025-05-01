@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Speedster - Video Speed Controller",
+  "version": "1.0",
+  "description": "A privacy-focused video speed controller for various video platforms.",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "48": "icon48.png",
+      "128": "icon128.png"
+    },
+    "default_title": "Speedster - Video Speed Controller"
+  }
+}
